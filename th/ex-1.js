@@ -7,6 +7,18 @@
 */
 
 // Start coding here
+function sortedFromMinToMax(numbers) {
+  for (let x = 0; x < numbers.length - 1; x += 1) {
+    for (let y = 0; y < numbers.length - 1 - x; y += 1) {
+      if (numbers[y] > numbers[y + 1]) {
+        let temp = numbers[y];
+        numbers[y] = numbers[y + 1];
+        numbers[y + 1] = temp;
+      }
+    }
+  }
+  return numbers;
+}
 
 const numbers = [64, 34, 25, 12, 22, 11, 90];
 console.log(sortedFromMinToMax(numbers)); // [11, 12, 22, 25, 34, 64, 90]
